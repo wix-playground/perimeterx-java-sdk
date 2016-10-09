@@ -6,7 +6,7 @@
     <name>PerimeterX JAVA SDK</name>
     <groupId>com.perimeterx</groupId>
     <artifactId>perimeterx-sdk</artifactId>
-    <version>1.0.14-SNAPSHOT</version>
+    <version>1.0.15-wix</version>
     <packaging>jar</packaging>
     <description>PerimeterX Java SDK</description>
     <url>https://github.com/PerimeterX/perimeterx-java-sdk</url>
@@ -41,13 +41,13 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>2.7.5</version>
+            <version>2.4.3</version>
         </dependency>
 
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-annotations</artifactId>
-            <version>2.7.5</version>
+            <version>2.4.3</version>
         </dependency>
 
         <dependency>
@@ -174,49 +174,7 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-gpg-plugin</artifactId>
-                <version>1.5</version>
-                <executions>
-                    <execution>
-                        <id>sign-artifacts</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>sign</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.sonatype.plugins</groupId>
-                <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.7</version>
-                <extensions>true</extensions>
-                <configuration>
-                    <serverId>ossrh</serverId>
-                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>com.google.code.maven-replacer-plugin</groupId>
-                <artifactId>replacer</artifactId>
-                <version>1.5.3</version>
-                <executions>
-                    <execution>
-                        <phase>validate</phase>
-                        <goals>
-                            <goal>replace</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <file>src/main/java/com/perimeterx/utils/Constants.java</file>
-                    <token>@moduleVersion@</token>
-                    <value>${version}</value>
-                </configuration>
-            </plugin>
+
         </plugins>
     </build>
 
